@@ -7,15 +7,25 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-
+#from PyQt5.QtCore import QObject, pyqtSignal
 from PyQt5 import QtCore, QtGui, QtWidgets
+from thirdWindow import *
 from UnoDBex import ServiceUno
 import sys
 
 score = [0] * 10
 i = [0] * 10
-
 class Ui_newWindow(object):
+
+    def openWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_thirdWindow()
+        self.ui.setupUi(self.window)
+        newWindow.hide()
+        self.window.show()
+        #mySignal = QtCore.pyqtSignal(str)
+        #mySignal.emit("good")
+
     def setupUi(self, newWindow):
         newWindow.setObjectName("newWindow")
         newWindow.resize(800, 600)
@@ -184,8 +194,11 @@ class Ui_newWindow(object):
         #self.label2.setVisible(False)
         #self.groupBox.setVisible(False)
         print(score)
+        #print("openNewWindow")
 
 
+        self.pushButton.clicked.connect(self.openWindow)
+'''
         overall = sum(score)
         scale = overall / 100
         bill = eval(input('Please input the bill amount: '))
@@ -215,7 +228,7 @@ class Ui_newWindow(object):
         ss.Close()
         sys.exit()
 
-
+'''
 
 if __name__ == "__main__":
     import sys
