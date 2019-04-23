@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from newWindow import Ui_newWindow
 
+
 class Ui_MainWindow(object):
     def openWindow(self):
         self.window = QtWidgets.QMainWindow()
@@ -60,6 +61,8 @@ import welcome_rc
 
 if __name__ == "__main__":
     import sys
+    from PyQt5.QtCore import pyqtRemoveInputHook
+    pyqtRemoveInputHook()
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
