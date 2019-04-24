@@ -71,7 +71,7 @@ class Ui_newWindow(object):
         _translate = QtCore.QCoreApplication.translate
         newWindow.setWindowTitle(_translate("newWindow", "newWindow"))
         self.label.setText(_translate("newWindow", "1. Have you been seated?"))
-        self.label2.setText(_translate("newWindow", "Answer"))
+        self.label2.setText(_translate("newWindow", ""))
         self.radioButton.setText(_translate("newWindow", "Yes"))
         self.radioButton_2.setText(_translate("newWindow", "No"))
         self.pushButton.setText(_translate("newWindow", "Submit"))
@@ -83,10 +83,10 @@ class Ui_newWindow(object):
         global i
         i[0] = i[0]+1
         if chk:
-            self.label2.setText("yes")
+            #self.label2.setText("yes")
             score1 += 10
         else:
-            self.label2.setText("No")
+            #self.label2.setText("No")
             score1 += 5
         self.label.setText("2. Did your server greet you?")
         if i[0] == 1:
@@ -101,10 +101,10 @@ class Ui_newWindow(object):
         global i
         i[1] = i[1]+1
         if chk:
-            self.label2.setText("yes")
+            #self.label2.setText("yes")
             score2 += 10
         else:
-            self.label2.setText("No")
+            #self.label2.setText("No")
             score2 += 5
         self.label.setText("3. Did you order?")
         if i[1] == 1:
@@ -117,10 +117,10 @@ class Ui_newWindow(object):
         global i
         i[2] = i[2]+1
         if chk:
-            self.label2.setText("yes")
+            #self.label2.setText("yes")
             score3 += 10
         else:
-            self.label2.setText("No")
+            #self.label2.setText("No")
             score3 += 5
         self.label.setText("4. Did server bring you drinks?")
         if i[2] == 1:
@@ -134,10 +134,10 @@ class Ui_newWindow(object):
         global i
         i[3] = i[3]+1
         if chk:
-            self.label2.setText("yes")
+            #self.label2.setText("yes")
             score4 += 10
         else:
-            self.label2.setText("No")
+            #self.label2.setText("No")
             score4 += 5
         self.label.setText("5. Did server bring you appetizers")
         if i[3] == 1:
@@ -150,10 +150,10 @@ class Ui_newWindow(object):
         global i
         i[4] = i[4]+1
         if chk:
-            self.label2.setText("yes")
+            #self.label2.setText("yes")
             score5 += 10
         else:
-            self.label2.setText("No")
+            #self.label2.setText("No")
             score5 += 5
         self.label.setText("6. Did server bring you food?")
         if i[4] == 1:
@@ -167,10 +167,10 @@ class Ui_newWindow(object):
         global i
         i[5] = i[5]+1
         if chk:
-            self.label2.setText("yes")
+            #self.label2.setText("yes")
             score6 += 10
         else:
-            self.label2.setText("No")
+            #self.label2.setText("No")
             score6 += 5
         self.label.setText("7. Did server clean the table for you?")
         if i[5] == 1:
@@ -184,10 +184,10 @@ class Ui_newWindow(object):
         global i
         i[6] = i[6]+1
         if chk:
-            self.label2.setText("yes")
+            #self.label2.setText("yes")
             score7 += 10
         else:
-            self.label2.setText("No")
+            #self.label2.setText("No")
             score7 += 5
         #self.label.setText("Thank you!!!")
         if i[6] == 1:
@@ -199,6 +199,7 @@ class Ui_newWindow(object):
         #self.groupBox.setVisible(False)
         #print("openNewWindow")
         self.openWindow()
+        self.label2.setText("")
         '''
         self.pushButton.setEnabled(False)
         self.pushButton.hide()

@@ -88,18 +88,6 @@ class Ui_thirdWindow(object):
         self.retranslateUi(thirdWindow)
         QtCore.QMetaObject.connectSlotsByName(thirdWindow)
 
-
-        buttonname = "0"
-        if self.radioButton_1.isChecked():
-            buttonname = "1"
-        elif self.radioButton_2.isChecked():
-            buttonname = "2"
-        elif self.radioButton_3.isChecked():
-            buttonname = "3"
-        elif self.radioButton_4.isChecked():
-            buttonname = "4"
-        else: #self.radioButton_5.isChecked():
-            buttonname = "5"
         #self.pushButton.clicked.connect(lambda: self.btn_clk())
         self.pushButton.clicked.connect(lambda: self.btn_clk(self.centralwidget.findChildren(QtWidgets.QRadioButton))
 )
@@ -149,13 +137,12 @@ class Ui_thirdWindow(object):
         for items in chk:
             if items.isChecked():
                 checked_radiobutton = items.text()
-                self.label.setText("Q10")
                 i[2] = i[2]+1
                 if i[2] == 1:
                     config.score[9] = int(checked_radiobutton)
                     print("Q10", config.score[9], i[2],config.score[9])
                     print(config.score)
-                self.label.setText("End")
+                self.label.setText("")
         self.groupBox.hide()
         self.openWindow()
 

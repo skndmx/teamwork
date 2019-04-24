@@ -26,7 +26,7 @@ class Ui_lastWindow(object):
         self.label.setGeometry(QtCore.QRect(220, 150, 71, 16))
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(100, 200, 900, 60))
+        self.label_2.setGeometry(QtCore.QRect(220, 200, 900, 60))
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(340, 80, 111, 16))
@@ -70,7 +70,7 @@ class Ui_lastWindow(object):
                 TipPercent = 0.1
 
             Tips = bill * TipPercent
-            finalTip = 'Base on your bill amount and the service you have today,\n we think amount of ' + "%.2f"%(Tips) + 'is the valuable amount to tip your server.'
+            finalTip = 'Base on your bill amount and the service you have today,\n we think amount of $' + "%.2f"%(Tips) + ' is the proper amount to tip your server.'
             self.label_2.setText(finalTip)
 
             ss = ServiceUno("service.db")
