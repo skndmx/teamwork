@@ -7,12 +7,20 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import newWindow
+#from lastWindow import *
 import config
+from lastWindow import *
 
 i = [0] * 10
 
 class Ui_thirdWindow(object):
+    def openWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_lastWindow()
+        self.ui.setupUi(self.window)
+        #thirdWindow.hide()
+        self.window.show()
+
     def setupUi(self, thirdWindow):
         thirdWindow.setObjectName("thirdWindow")
         thirdWindow.resize(800, 600)
@@ -111,13 +119,13 @@ class Ui_thirdWindow(object):
         self.radioButton_8.setText(_translate("thirdWindow", "8"))
         self.radioButton_9.setText(_translate("thirdWindow", "9"))
         self.radioButton_10.setText(_translate("thirdWindow", "10"))
-        self.label.setText(_translate("thirdWindow", "Q8. "))
+        self.label.setText(_translate("thirdWindow", "8. Please provide a score for how satisified were you for the service: "))
 
     def btn_clk(self,chk):
         for items in chk:
             if items.isChecked():
                 checked_radiobutton = items.text()
-                self.label.setText("Q9")
+                self.label.setText("9. Please provide a score for how friendly your server was: ")
                 i[0] = i[0]+1
                 if i[0] == 1:
                     config.score[7] = int(checked_radiobutton)
@@ -129,7 +137,7 @@ class Ui_thirdWindow(object):
         for items in chk:
             if items.isChecked():
                 checked_radiobutton = items.text()
-                self.label.setText("Q10")
+                self.label.setText("10. Please provide a overall score for your server: ")
                 i[1] = i[1]+1
                 if i[1] == 1:
                     config.score[8] = int(checked_radiobutton)
@@ -149,10 +157,13 @@ class Ui_thirdWindow(object):
                     print(config.score)
                 self.label.setText("End")
         self.groupBox.hide()
+        self.openWindow()
 
 
 if __name__ == "__main__":
     import sys
+    from PyQt5.QtCore import pyqtRemoveInputHook
+    pyqtRemoveInputHook()
     app = QtWidgets.QApplication(sys.argv)
     thirdWindow = QtWidgets.QMainWindow()
     ui = Ui_thirdWindow()

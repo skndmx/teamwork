@@ -22,7 +22,7 @@ class Ui_newWindow(object):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_thirdWindow()
         self.ui.setupUi(self.window)
-        newWindow.hide()
+        #newWindow.hide()
         self.window.show()
 
     def setupUi(self, newWindow):
@@ -69,7 +69,7 @@ class Ui_newWindow(object):
 
     def retranslateUi(self, newWindow):
         _translate = QtCore.QCoreApplication.translate
-        newWindow.setWindowTitle(_translate("newWindow", "MainWindow"))
+        newWindow.setWindowTitle(_translate("newWindow", "newWindow"))
         self.label.setText(_translate("newWindow", "1. Have you been seated?"))
         self.label2.setText(_translate("newWindow", "Answer"))
         self.radioButton.setText(_translate("newWindow", "Yes"))
