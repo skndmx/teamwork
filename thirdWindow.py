@@ -89,8 +89,7 @@ class Ui_thirdWindow(object):
         QtCore.QMetaObject.connectSlotsByName(thirdWindow)
 
         #self.pushButton.clicked.connect(lambda: self.btn_clk())
-        self.pushButton.clicked.connect(lambda: self.btn_clk(self.centralwidget.findChildren(QtWidgets.QRadioButton))
-)
+        self.pushButton.clicked.connect(lambda: self.btn_clk(self.centralwidget.findChildren(QtWidgets.QRadioButton)))
 
 
     def retranslateUi(self, thirdWindow):
