@@ -109,10 +109,10 @@ class Ui_thirdWindow(object):
         self.label.setText(_translate("thirdWindow", "8. Please provide a score for how satisified were you for the service: "))
 
     def btn_clk(self,chk):
+        self.label.setText("9. Please provide a score for how friendly your server was: ")
         for items in chk:
             if items.isChecked():
                 checked_radiobutton = items.text()
-                self.label.setText("9. Please provide a score for how friendly your server was: ")
                 i[0] = i[0]+1
                 if i[0] == 1:
                     config.score[7] = int(checked_radiobutton)
@@ -121,10 +121,10 @@ class Ui_thirdWindow(object):
         self.pushButton.clicked.connect(lambda: self.btn_clk2(self.centralwidget.findChildren(QtWidgets.QRadioButton)))
 
     def btn_clk2(self,chk):
+        self.label.setText("10. Please provide a overall score for your server: ")
         for items in chk:
             if items.isChecked():
                 checked_radiobutton = items.text()
-                self.label.setText("10. Please provide a overall score for your server: ")
                 i[1] = i[1]+1
                 if i[1] == 1:
                     config.score[8] = int(checked_radiobutton)

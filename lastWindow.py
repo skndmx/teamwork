@@ -16,6 +16,7 @@ class Ui_lastWindow(object):
     def setupUi(self, lastWindow):
         lastWindow.setObjectName("lastWindow")
         lastWindow.resize(800, 600)
+        lastWindow.setStyleSheet(open('style.qss').read())
         self.centralwidget = QtWidgets.QWidget(lastWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
@@ -40,12 +41,22 @@ class Ui_lastWindow(object):
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(340, 80, 111, 16))
         self.label_3.setObjectName("label_3")
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_3.setFont(font)
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setWordWrap(False)
+        self.label_3.setObjectName("label")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(340, 300, 900, 80))
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(190, 120, 90, 16))
         self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(0, 0, 800, 600))
+        self.label_6.setObjectName("label_3")
+        self.label_6.lower()
 
         lastWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(lastWindow)
@@ -146,6 +157,8 @@ class Ui_lastWindow(object):
         self.label_3.setText(_translate("lastWindow", "Thank you!"))
         self.label_4.setText(_translate("lastWindow", ""))
         self.label_5.setText(_translate("lastWindow", "Server Name:"))
+        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/newPrefix/bg.jpg\"/></p></body></html>"))
+
 
 
 
